@@ -16,13 +16,13 @@
         "Entry"
         {
         "MsmKey" = "8:_00A3FDD3D991F19B80A14C60CC88EA70"
-        "OwnerKey" = "8:_63103D8B9D904D1FA603C24A397DA82A"
+        "OwnerKey" = "8:_924587B9C035E39328EDEE2311188FF2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_00A3FDD3D991F19B80A14C60CC88EA70"
-        "OwnerKey" = "8:_924587B9C035E39328EDEE2311188FF2"
+        "OwnerKey" = "8:_63103D8B9D904D1FA603C24A397DA82A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -226,7 +226,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_924587B9C035E39328EDEE2311188FF2"
+        "OwnerKey" = "8:_63103D8B9D904D1FA603C24A397DA82A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_94C5858FFE3B4DF386619030115E9C3C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -292,30 +298,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5E8ADE73980B4E14AA4969E53AB9A753"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2A9E957ACB9D4F1D94E244353F8D5094"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_94C5858FFE3B4DF386619030115E9C3C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_63103D8B9D904D1FA603C24A397DA82A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_5D99DDDA20DB32BC42F0CAA6CF8F2640"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -328,13 +310,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_646EDFA5F78996A71698FDE6EBAE5AFC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_924587B9C035E39328EDEE2311188FF2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_00A3FDD3D991F19B80A14C60CC88EA70"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_646EDFA5F78996A71698FDE6EBAE5AFC"
+        "OwnerKey" = "8:_5E8ADE73980B4E14AA4969E53AB9A753"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2A9E957ACB9D4F1D94E244353F8D5094"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -441,7 +441,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\GreenLock_nnv_1.2.1.msi"
+        "OutputFilename" = "8:Release\\GreenLock_nnv_1.2.2.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -1284,14 +1284,14 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GreenLock"
         "ProductCode" = "8:{995D3A5C-AD81-4759-B1C4-07FCFE99A542}"
-        "PackageCode" = "8:{AD399FA1-C30D-4447-9B0E-58BA4C6F047C}"
+        "PackageCode" = "8:{43FDA66C-695A-43F4-9548-31CCB732CA29}"
         "UpgradeCode" = "8:{8AB80418-1FA4-4E10-985C-17F9EF5BCA22}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.2.1"
+        "ProductVersion" = "8:1.2.2"
         "Manufacturer" = "8:HansCreative"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
