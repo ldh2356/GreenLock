@@ -64,7 +64,7 @@ namespace GreenLock
         public int rcvRssi = default(int); // 시리얼 포트에서 받아 온 이전 RSSI값
         public bool screensaverStatus;
         public bool screensaverPasswordflag;
-        FormScreenSaver screenSaver;
+        FormScreenSaver2 screenSaver;
         FormScreenSaver2 screenSaver2;
 
         Thread inputThread = null;
@@ -1381,11 +1381,11 @@ namespace GreenLock
             }
         }
 
-        public void SetFormScreenSaver(FormScreenSaver screenSaver)
+        public void SetFormScreenSaver(FormScreenSaver2 screenSaver)
         {
             try
             {
-                this.screenSaver = screenSaver;
+                this.screenSaver = screenSaver2;
             }
             catch (Exception ex)
             {
@@ -1498,7 +1498,7 @@ namespace GreenLock
 
                 if (screen[primaryNum] == screen[screen1])
                 {
-                    screenSaver = new FormScreenSaver(this);
+                    screenSaver = new FormScreenSaver2(this);
 
                     point = new Point(screen[screen1].Bounds.Location.X, screen[screen1].Bounds.Location.Y);
                     screenSaver.Location = point;
@@ -1507,8 +1507,8 @@ namespace GreenLock
 
                     //screenSaver.pb_screenSaver.Size = new Size(screen[screen1].WorkingArea.Width, screen[screen1].WorkingArea.Height);
 
-                    //screenSaver.Size = new Size(100,100);
-                    screenSaver.Size = new Size(screen[screen1].WorkingArea.Width, screen[screen1].WorkingArea.Height);
+                    screenSaver.Size = new Size(200, 200);
+                    //screenSaver.Size = new Size(screen[screen1].WorkingArea.Width, screen[screen1].WorkingArea.Height);
                     screenSaver.Show(this);
                     KeyboardHooking.TaskBarHide();
                 }
