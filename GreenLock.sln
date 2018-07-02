@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenLock", "GreenLock\GreenLock.csproj", "{C6C12767-ED9D-48B0-94F1-07B5C63937CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6C12767-ED9D-48B0-94F1-07B5C63937CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6C12767-ED9D-48B0-94F1-07B5C63937CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6C12767-ED9D-48B0-94F1-07B5C63937CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6C12767-ED9D-48B0-94F1-07B5C63937CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {897BB104-C5C6-4EF9-8004-25F2BE485F67}
+	EndGlobalSection
+EndGlobal
