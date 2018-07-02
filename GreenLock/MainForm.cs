@@ -1542,7 +1542,7 @@ namespace GreenLock
                     screenSaver2.Location = point;
 
                     //GIF파일의 크기를 서브모니터 크기로 조정
-                    screenSaver2.Size = new Size(screen[screen2].Bounds.Width * Scale, screen[screen2].Bounds.Height * Scale); 
+                    screenSaver2.Size = new Size(screen[screen2].Bounds.Width , screen[screen2].Bounds.Height); 
                     screenSaver2.Show(this);
                 }
             }
