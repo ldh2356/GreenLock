@@ -1,8 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+
+using System.Net.Sockets;
+using InTheHand.Net.Bluetooth;
+using InTheHand.Windows.Forms;
+using InTheHand.Net.Sockets;
+using InTheHand.Net.Bluetooth.AttributeIds;
 
 namespace GreenLock
 {
@@ -14,9 +22,45 @@ namespace GreenLock
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            if (ProcessChecker.IsOnlyProcess(Application.ProductName))
+            {
+                //try
+                //{
+                //}
+                //catch (Exception e)
+                //{
+                //    MessageBox.Show(e.Message);
+                //    Console.Write(e.Message + "Program");
+                //    System.Environment.Exit(0);
+                //}
+                //finally
+                //{
+                //    Application.EnableVisualStyles();
+                //    Application.SetCompatibleTextRenderingDefault(false);
+                //    Application.Run(new MainForm());
+                //}
+                try
+                {
+                    IntPtr ptr = FindWindow(null, "MainForm");
+                    if (ptr != IntPtr.Zero)
+                    {
+                        SendMessage(ptr, 0x0010, 0, 0);
+                        System.Environment.Exit(0);
+                    }
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new MainForm());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString() + "Program");
+                }
+            }
         }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern int SendMessage(IntPtr hwnd, int msg, int wparam, int lparam);
     }
 }
