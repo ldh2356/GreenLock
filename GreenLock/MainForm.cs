@@ -13,6 +13,7 @@ using System.Net;
 using Newtonsoft.Json.Linq;
 using System.Management;
 using Microsoft.Win32;
+using GreenLock.Utils;
 
 namespace GreenLock
 {
@@ -819,6 +820,10 @@ namespace GreenLock
     Console.Write("");
 #endif
 
+                // 모니터 정확 해상도를 받기위한 DPI 세터 추가
+                DpiManager.SetDpiAwareness();
+              
+
                 getUpTimeSavingTime();
 
                 deviceUserControl1.TbDeviceAddr0.TextChanged += new EventHandler(FocusMove);
@@ -1502,9 +1507,8 @@ namespace GreenLock
 
                     //screenSaver.pb_screenSaver.Size = new Size(screen[screen1].WorkingArea.Width, screen[screen1].WorkingArea.Height);
 
-
-                    //screenSaver.Size = new Size(screen[screen1].WorkingArea.Width, screen[screen1].WorkingArea.Height);
-                    screenSaver.Size= new Size(100, 100);
+                    screenSaver.Size = new Size(100,100);
+                    //screenSaver.Size = new Size(screen[screen1].WorkingArea.Width, screen[screen1].WorkingArea.Height);                    
                     screenSaver.Show(this);
                     KeyboardHooking.TaskBarHide();
                 }

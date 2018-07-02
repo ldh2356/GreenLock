@@ -79,7 +79,7 @@ namespace GreenLock
 #if DEBUG
                 Debug.WriteLine("폼2 마우스다운");
 #endif
-                ActivePasswordDialog();
+                //ActivePasswordDialog();
             }
             catch (Exception ex)
             {
@@ -100,7 +100,7 @@ namespace GreenLock
 #if DEBUG
                 Debug.WriteLine("폼2 클릭");
 #endif
-                ActivePasswordDialog();
+                //ActivePasswordDialog();
             }
             catch (Exception ex)
             {
