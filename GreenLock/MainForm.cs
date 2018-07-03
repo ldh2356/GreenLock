@@ -1508,7 +1508,7 @@ namespace GreenLock
                     //screenSaver.pb_screenSaver.Size = new Size(screen[screen1].WorkingArea.Width, screen[screen1].WorkingArea.Height);
 
                     //screenSaver.Size = new Size(100,100);
-                    screenSaver.Size = new Size(screen[screen1].WorkingArea.Width, screen[screen1].WorkingArea.Height);
+                    screenSaver.Size = new Size(screen[screen1].Bounds.Width, screen[screen1].Bounds.Height);
                     screenSaver.Show(this);
                     KeyboardHooking.TaskBarHide();
                 }
