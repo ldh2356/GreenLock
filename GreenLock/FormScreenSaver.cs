@@ -42,7 +42,7 @@ namespace GreenLock
             {
                 InitializeComponent();
                 this.main = main;
-                main.SetFormScreenSaver(this);
+                //main.SetFormScreenSaver(this);
 
                 FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
                 StartPosition = FormStartPosition.Manual;
@@ -155,7 +155,7 @@ namespace GreenLock
 #if DEBUG
                 Debug.WriteLine("폼1 마우스다운");
 #endif
-                ActivePasswordDialog();
+                //ActivePasswordDialog();
             }
             catch (Exception ex)
             {
@@ -168,14 +168,14 @@ namespace GreenLock
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void pb_screenSaver_Click(object sender, EventArgs e)
+        private void pb_screenSaver_Click_1(object sender, EventArgs e)
         {
             try
             {
 #if DEBUG
                 Debug.WriteLine("폼1 클릭");
 #endif
-                ActivePasswordDialog();
+                //ActivePasswordDialog();
             }
             catch (Exception ex)
             {
@@ -196,8 +196,7 @@ namespace GreenLock
 #if DEBUG
                 Debug.WriteLine("폼1 마우스엔터");
 #endif
-                this.BringToFront();
-                this.Activate();
+               
             }
             catch (Exception ex)
             {
@@ -215,85 +214,5 @@ namespace GreenLock
 
         }
 
-        private bool handleFirstClickOnActivated = false;
-
-
-        /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.Form.Activated" /> event.
-        /// Handle WinForms bug for first click during activation
-        /// </summary>
-        /// <param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param>
-        protected override void OnActivated(EventArgs e)
-        {
-            base.OnActivated(e);
-            if (this.handleFirstClickOnActivated)
-            {
-                var cursorPosition = Cursor.Position;
-                var clientPoint = this.PointToClient(cursorPosition);
-                var child = this.GetChildAtPoint(clientPoint);
-                while (this.handleFirstClickOnActivated && child != null)
-                {
-                    var toolStrip = child as ToolStrip;
-                    if (toolStrip != null)
-                    {
-                        this.handleFirstClickOnActivated = false;
-                        clientPoint = toolStrip.PointToClient(cursorPosition);
-                        foreach (var item in toolStrip.Items)
-                        {
-                            var toolStripItem = item as ToolStripItem;
-                            if (toolStripItem != null && toolStripItem.Bounds.Contains(clientPoint))
-                            {
-                                var tsMenuItem = item as ToolStripMenuItem;
-                                if (tsMenuItem != null)
-                                {
-                                    tsMenuItem.ShowDropDown();
-                                }
-                                else
-                                {
-                                    toolStripItem.PerformClick();
-                                }
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        child = child.GetChildAtPoint(clientPoint);
-                    }
-                }
-                this.handleFirstClickOnActivated = false;
-            }
-        }
-
-
-        /// <summary>
-        /// Handle WndProc
-        /// </summary>
-        /// <param name="m">The Windows <see cref="T:System.Windows.Forms.Message" /> to process.</param>
-        protected override void WndProc(ref Message m)
-        {
-            const int WM_ACTIVATE = 0x0006;
-            const int WA_CLICKACTIVE = 0x0002;
-            if (m.Msg == WM_ACTIVATE && Low16(m.WParam) == WA_CLICKACTIVE)
-            {
-                handleFirstClickOnActivated = true;
-            }
-            base.WndProc(ref m);
-        }
-
-        private static int GetIntUnchecked(IntPtr value)
-        {
-            return IntPtr.Size == 8 ? unchecked((int)value.ToInt64()) : value.ToInt32();
-        }
-
-        private static int Low16(IntPtr value)
-        {
-            return unchecked((short)GetIntUnchecked(value));
-        }
-
-        private static int High16(IntPtr value)
-        {
-            return unchecked((short)(((uint)GetIntUnchecked(value)) >> 16));
-        }
     }
 }
